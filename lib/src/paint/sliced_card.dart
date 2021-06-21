@@ -5,10 +5,15 @@ class SlicedCard extends CustomPainter {
   final double _heightPercent;
 
   SlicedCard(this._color, this._heightPercent);
-  static Widget draw(
-          {required Color cardColor, required double heightFraction}) =>
+  static Widget draw({
+    required Color cardColor,
+    required double heightFraction,
+  }) =>
       CustomPaint(
-        painter: SlicedCard(cardColor, heightFraction),
+        painter: SlicedCard(
+          cardColor,
+          heightFraction,
+        ),
       );
 
   @override

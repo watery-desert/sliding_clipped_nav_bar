@@ -40,13 +40,14 @@ class BuildBar extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: buttons.map(
           (item) {
+            final buttonIndex = buttons.indexOf(item);
             return AnimatedButton(
               icon: item.icon,
               size: iconSize,
               title: item.title,
               activeColor: activeColor,
-              index: buttons.indexOf(item),
-              isSelected: buttons.indexOf(item) == selectedIndex ? true : false,
+              index: buttonIndex,
+              isSelected: buttonIndex == selectedIndex ? true : false,
               onTap: onButtonPress,
               slidingCardColor: backgroundColor,
               inactiveColor: inactiveColor,

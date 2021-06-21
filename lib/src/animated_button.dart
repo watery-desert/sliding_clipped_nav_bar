@@ -97,8 +97,10 @@ class _AnimatedButtonState extends State<AnimatedButton>
               height: 56,
             ),
             SlideTransition(
-              position: Tween<Offset>(begin: Offset.zero, end: Offset(0, -1.4))
-                  .animate(
+              position: Tween<Offset>(
+                begin: Offset.zero,
+                end: Offset(0, -1.4),
+              ).animate(
                 CurvedAnimation(
                   parent: _animationController,
                   curve: Interval(0.3, 1.0),
@@ -111,9 +113,10 @@ class _AnimatedButtonState extends State<AnimatedButton>
               ),
             ),
             SlideTransition(
-              position:
-                  Tween<Offset>(begin: Offset(0, 0.8), end: Offset(0, -0.8))
-                      .animate(
+              position: Tween<Offset>(
+                begin: Offset(0, 0.8),
+                end: Offset(0, -0.8),
+              ).animate(
                 CurvedAnimation(
                   parent: _animationController,
                   curve: Interval(0.3, 1.0),
@@ -168,23 +171,24 @@ class _AnimatedButtonState extends State<AnimatedButton>
             Visibility(
               visible: widget.isSelected && _animationController.value <= 0.3,
               child: RippleEffect.draw(
-                  size: Tween<double>(begin: 8.0, end: 56.0)
-                      .animate(
-                        CurvedAnimation(
-                          parent: _animationController,
-                          curve: Interval(0.0, 0.3),
-                        ),
-                      )
-                      .value,
-                  strokeWidth: Tween<double>(begin: 24.0, end: 0.0)
-                      .animate(
-                        CurvedAnimation(
-                          parent: _animationController,
-                          curve: Interval(0.1, 0.3),
-                        ),
-                      )
-                      .value,
-                  rippleColor: activeColor.withOpacity(0.3)),
+                size: Tween<double>(begin: 8.0, end: 56.0)
+                    .animate(
+                      CurvedAnimation(
+                        parent: _animationController,
+                        curve: Interval(0.0, 0.3),
+                      ),
+                    )
+                    .value,
+                strokeWidth: Tween<double>(begin: 24.0, end: 0.0)
+                    .animate(
+                      CurvedAnimation(
+                        parent: _animationController,
+                        curve: Interval(0.1, 0.3),
+                      ),
+                    )
+                    .value,
+                rippleColor: activeColor.withOpacity(0.3),
+              ),
             ),
           ],
         ),

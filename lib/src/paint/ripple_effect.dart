@@ -4,7 +4,10 @@ class RippleEffect extends CustomPainter {
   final Color _color;
   final double _strokeWidth;
 
-  RippleEffect(this._color, this._strokeWidth);
+  RippleEffect(
+    this._color,
+    this._strokeWidth,
+  );
   static Widget draw({
     required Color rippleColor,
     required double size,
@@ -14,7 +17,10 @@ class RippleEffect extends CustomPainter {
         width: size,
         height: size,
         child: CustomPaint(
-          painter: RippleEffect(rippleColor, strokeWidth),
+          painter: RippleEffect(
+            rippleColor,
+            strokeWidth,
+          ),
         ),
       );
 
@@ -25,7 +31,10 @@ class RippleEffect extends CustomPainter {
       ..style = PaintingStyle.stroke
       ..strokeWidth = _strokeWidth;
     canvas.drawCircle(
-        Offset(size.width / 2, size.height / 2), size.height / 2, paint);
+      Offset(size.width / 2, size.height / 2),
+      size.height / 2,
+      paint,
+    );
   }
 
   @override
