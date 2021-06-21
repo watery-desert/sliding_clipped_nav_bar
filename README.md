@@ -3,12 +3,11 @@
 Navigation bar inspired by Toolbar-icons-animation (designed by Cuberto).
 
 ## Demo Screen Recording
-<img src="assets/screen_recording.gif"  width="300"/>
-
+<img src="https://github.com/watery-desert/sliding_clipped_nav_bar/blob/main/assets/screen_recording.gif?raw=true"  width="300"/>
 
 ## **Design Credit**
 
-<img src="assets/credit_video.gif"  width="500"/>
+<img src="https://github.com/watery-desert/sliding_clipped_nav_bar/blob/main/assets/credit_video.gif?raw=true"  width="500"/>
 
 [Toolbar icons animation by Cuberto](https://dribbble.com/shots/5605168-Toolbar-icons-animation)
 
