@@ -19,7 +19,9 @@ The bar height is taller than normal and might not be suitable for small devices
  - FontAwesomeIcons: 24
  - MaterialIcons: 30
 
- Check the example app the implementation is pretty straightforward.
+Feel free to report issue even if you are using a another icon pack and see some problem.
+
+Check the example app the implementation is pretty straightforward.
 
 Please consider giving me star and see my other repositories. This will motivate me to keep working.
 
