@@ -1,7 +1,8 @@
 # sliding_clipped_nav_bar
 
-A new Flutter project.
+Navigation bar inspired by Toolbar-icons-animation (designed by Cuberto).
 
+## Demo Screen Recording
 <img src="assets/screen_recording.gif"  width="300"/>
 
 
