@@ -1,5 +1,7 @@
 library sliding_clipped_nav_bar;
 
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 export 'src/menu_item.dart';
 import 'src/menu_item.dart';
@@ -24,7 +26,10 @@ class SlidingClippedNavBar extends StatelessWidget {
     this.activeColor = const Color(0xFF01579B),
     this.backgroundColor = Colors.white,
     this.inactiveColor,
-  });
+  })  : assert(buttons.length > 1, 'You must provide minimum 2 Menu items'),
+        assert(buttons.length < 5, 'Maximum menu item count is 4'),
+        assert(Platform.isIOS || Platform.isAndroid,
+            'Only supports android and iOS');
 
   @override
   Widget build(BuildContext context) {
