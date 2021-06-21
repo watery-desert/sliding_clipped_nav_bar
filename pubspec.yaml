@@ -1,5 +1,5 @@
 name: sliding_clipped_nav_bar
-description: Sliding menu text and icons with ripple effect.
+description: Bottom Navigation Bar with sliding menu icon and text with clipping effect, also ripple effect when tapped.
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `pub publish`. This is preferred for private packages.

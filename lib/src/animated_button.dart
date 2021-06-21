@@ -3,7 +3,6 @@ import 'build_bar.dart';
 import './paint/ripple_effect.dart';
 import 'paint/sliced_card.dart';
 
-
 class AnimatedButton extends StatefulWidget {
   final String title;
   final IconData icon;

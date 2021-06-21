@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class MenuItem {
+class BarItem {
   final IconData icon;
   final String title;
-  MenuItem({
+  BarItem({
     required this.title,
     required this.icon,
   });

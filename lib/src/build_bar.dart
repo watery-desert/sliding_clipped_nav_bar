@@ -5,10 +5,8 @@ import 'menu_item.dart';
 
 typedef OnButtonPressCallback = void Function(int index);
 
-
-
 class BuildBar extends StatelessWidget {
-  final List<MenuItem> buttons;
+  final List<BarItem> buttons;
 
   final int selectedIndex;
   final double iconSize;
