@@ -41,8 +41,8 @@ onButtonPressed → `OnButtonPressCallback`
 
 backgroundColor → `Color`
  -  background color of the bar.\
-*optional [Colors.white]* 
----
+*optional [Colors.white]*
+
 ### **Suitable icon size**
  - FontAwesomeIcons: 24
  - MaterialIcons: 30
