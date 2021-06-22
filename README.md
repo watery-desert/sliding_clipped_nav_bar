@@ -26,6 +26,7 @@ selectedIndex → `int`
 
 iconSize → `double`
  - Size of all icons (inactive items), don't make it too big or will be clipped.\
+ *optional [30]*
 
 activeColor → `Color`
  - Color of the selected item which indicate selected.\
