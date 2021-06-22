@@ -31,7 +31,7 @@ activeColor → `Color`
  - Color of the selected item which indicate selected.\
 *optional [const Color(0xFF01579B)]*
 
-inactiveColor → `Color`
+inactiveColor → `Color?`
  - Inactive color of item, which actually color icons.\
 *nullable* 
 
