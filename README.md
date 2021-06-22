@@ -14,6 +14,37 @@ Navigation bar inspired by Toolbar-icons-animation (designed by Cuberto).
 ### Disclaimer
 The bar height is taller than normal and might not be suitable for small devices. Also don't make the icon size too big or they will be clipped. 
 
+## Properties
+
+barItems → `List<BarItem>`
+- List of bar items that shows horizontally.\
+ *required*
+
+selectedIndex → `int`
+- Selected index of the bar items.\
+ *required*
+
+iconSize → `double`
+ - Size of all icons (inactive items), don't make it too big or will be clipped.\
+
+activeColor → `Color`
+ - Color of the selected item which indicate selected.\
+*const Color(0xFF01579B)*
+
+inactiveColor → `Color`
+ - Inactive color of item, which actually color icons.\
+*nullable* 
+
+onButtonPressed → `OnButtonPressCallback`
+ - Callback when item is pressed.\
+*required* 
+
+backgroundColor → `Color`
+ -  background color of the bar.\
+*Colors.white* 
+
+
+
 ### **Suitable icon size**
  - FontAwesomeIcons: 24
  - MaterialIcons: 30
