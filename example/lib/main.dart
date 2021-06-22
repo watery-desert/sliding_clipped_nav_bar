@@ -36,7 +36,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.white70,
       body: PageView(
         controller: controller,
         children: [
@@ -95,7 +95,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           BarItem(
             icon: Icons.bolt_rounded,
-            title: 'Energy',
+            title: 'Notificadsfdsfdsfdsfdstion',
           ),
           BarItem(
             icon: Icons.tune_rounded,

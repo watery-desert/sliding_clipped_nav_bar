@@ -12,6 +12,7 @@ class AnimatedButton extends StatefulWidget {
   final int index;
   final Color slidingCardColor;
   final Color inactiveColor;
+  final int itemCount;
 
   final OnButtonPressCallback onTap;
   const AnimatedButton({
@@ -25,6 +26,7 @@ class AnimatedButton extends StatefulWidget {
     required this.index,
     required this.slidingCardColor,
     required this.inactiveColor,
+    required this.itemCount,
   }) : super(key: key);
 
   @override
@@ -39,27 +41,34 @@ class _AnimatedButtonState extends State<AnimatedButton>
   void initState() {
     super.initState();
     _animationController = AnimationController(
-        vsync: this, duration: const Duration(milliseconds: 600));
+      vsync: this,
+      duration: const Duration(milliseconds: 600),
+    );
 
     if (widget.isSelected) {
       _animationController.forward(from: 0.3);
     }
   }
 
-  Widget _buildCard(double height) => Container(
-        width: 70,
-        height: height,
-        child: SlicedCard.draw(
-            cardColor: widget.slidingCardColor,
-            heightFraction: Tween<double>(begin: 0.1, end: 0.4)
-                .animate(
-                  CurvedAnimation(
-                    parent: _animationController,
-                    curve: Interval(0.5, 0.7),
-                  ),
-                )
-                .value),
-      );
+  Widget _buildCard(double height) {
+    final deviceWidth = MediaQuery.of(context).size.width;
+
+    return Container(
+      // width: 70,
+      width: deviceWidth / widget.itemCount,
+      height: height,
+      child: SlicedCard.draw(
+          cardColor: widget.slidingCardColor,
+          heightFraction: Tween<double>(begin: 0.1, end: 0.4)
+              .animate(
+                CurvedAnimation(
+                  parent: _animationController,
+                  curve: Interval(0.5, 0.7),
+                ),
+              )
+              .value),
+    );
+  }
 
   @override
   void didUpdateWidget(covariant AnimatedButton oldWidget) {
@@ -70,8 +79,26 @@ class _AnimatedButtonState extends State<AnimatedButton>
     }
   }
 
+  TextStyle getTextStyle() => TextStyle(
+        fontSize: 16,
+        fontWeight: FontWeight.bold,
+        color: widget.activeColor,
+      );
+
+  // copied from here
+  //https://stackoverflow.com/a/62536187/16122873
+  double textHeight(text, textStyle) => (TextPainter(
+          text: TextSpan(text: text, style: textStyle),
+          maxLines: 1,
+          textScaleFactor: MediaQuery.of(context).textScaleFactor,
+          textDirection: Directionality.of(context))
+        ..layout())
+      .size
+      .height;
+
   @override
   Widget build(BuildContext context) {
+    final deviceWidth = MediaQuery.of(context).size.width;
     final activeColor = widget.activeColor;
     final size = widget.size;
     final index = widget.index;
@@ -134,14 +161,16 @@ class _AnimatedButtonState extends State<AnimatedButton>
                   curve: Interval(0.3, 1.0),
                 ),
               ),
-              child: Text(
-                title,
-                overflow: TextOverflow.clip,
-                maxLines: 1,
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                  color: activeColor,
+              child: Container(
+                width: deviceWidth / widget.itemCount,
+                // color: Colors.amber,
+                alignment: Alignment.center,
+                height: textHeight(title, getTextStyle()),
+                child: Text(
+                  title,
+                  overflow: TextOverflow.clip,
+                  maxLines: 1,
+                  style: getTextStyle(),
                 ),
               ),
             ),
