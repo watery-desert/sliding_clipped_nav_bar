@@ -14,7 +14,7 @@ Navigation bar inspired by Toolbar-icons-animation (designed by Cuberto).
 ### Disclaimer
 The bar height is taller than normal and might not be suitable for small devices. Also don't make the icon size too big or they will be clipped. 
 
-## Api reference
+## API reference
 
 barItems → `List<BarItem>`
 - List of bar items that shows horizontally.\

@@ -1,3 +1,5 @@
+## 1.0.0+3
+ - Added API reference
 ## 1.0.0+2
  - Minor update with updated assets
 ## 1.0.0+1
