@@ -1,3 +1,6 @@
+## 1.0.1
+ - Added a new named constructor to set individual item color. [issue #1](https://github.com/watery-desert/sliding_clipped_nav_bar/issues/1#issue-928532739)
+  
 ## 1.0.0+5
  - Bug fix: Long text overflowing.
 ## 1.0.0+4
