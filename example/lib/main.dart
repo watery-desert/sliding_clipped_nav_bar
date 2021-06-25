@@ -36,7 +36,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white70,
+      backgroundColor: Colors.white,
       body: PageView(
         controller: controller,
         children: [
@@ -82,24 +82,34 @@ class _MyHomePageState extends State<MyHomePage> {
         },
         iconSize: 30,
         // 24 should be okay
-        activeColor: Colors.blue[900]!,
+        // activeColor:  Color(0xFF01579B),
+        activeColor: Colors.green,
+        inactiveColor: Colors.red,
         selectedIndex: selectedIndex,
         barItems: [
           BarItem(
             icon: Icons.event,
             title: 'Events',
+            // activeColor: Colors.amber,
+            // inactiveColor: Colors.red,
           ),
           BarItem(
             icon: Icons.search_rounded,
             title: 'Search',
+            // activeColor: Colors.red,
+            // inactiveColor: Colors.green,
           ),
           BarItem(
             icon: Icons.bolt_rounded,
-            title: 'Notificadsfdsfdsfdsfdstion',
+            title: 'Energy',
+            // activeColor: Colors.green,
+            // inactiveColor: Colors.blue,
           ),
           BarItem(
             icon: Icons.tune_rounded,
             title: 'Settings',
+            // activeColor: Colors.purple,
+            // inactiveColor: Colors.brown,
           ),
         ],
       ),

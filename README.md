@@ -12,7 +12,11 @@ Navigation bar inspired by Toolbar-icons-animation (designed by Cuberto).
 [Toolbar icons animation by Cuberto](https://dribbble.com/shots/5605168-Toolbar-icons-animation)
 
 ### Disclaimer
-The bar height is taller than normal and might not be suitable for small devices. Also don't make the icon size too big or they will be clipped. 
+The bar height is taller than normal and might not be suitable for small devices. Also don't make the icon size too big or they will be clipped.
+
+**Suitable icon size**
+ - FontAwesomeIcons: 24
+ - MaterialIcons: 30
 
 ## API reference
 
@@ -30,7 +34,7 @@ iconSize → `double`
 
 activeColor → `Color`
  - Color of the selected item which indicate selected.\
-*optional [const Color(0xFF01579B)]*
+*required*
 
 inactiveColor → `Color?`
  - Inactive color of item, which actually color icons.\
@@ -44,9 +48,49 @@ backgroundColor → `Color`
  -  background color of the bar.\
 *optional [Colors.white]*
 
-### **Suitable icon size**
- - FontAwesomeIcons: 24
- - MaterialIcons: 30
+### Basic use
+```dart
+ return Scaffold(
+     
+      body: PageView(
+      controller: controller,
+...
+      ),
+      bottomNavigationBar: SlidingClippedNavBar(
+        backgroundColor: Colors.white,
+        onButtonPressed: (index) {
+          setState(() {
+            selectedIndex = index;
+          });
+          controller.animateToPage(selectedIndex,
+              duration: const Duration(milliseconds: 400),
+              curve: Curves.easeOutQuad);
+        },
+        iconSize: 30,
+        activeColor: Color(0xFF01579B),
+        selectedIndex: selectedIndex,
+        barItems: [
+          BarItem(
+            icon: Icons.event,
+            title: 'Events',
+          ),
+          BarItem(
+            icon: Icons.search_rounded,
+            title: 'Search',
+          ),
+          BarItem(
+            icon: Icons.bolt_rounded,
+            title: 'Energy',
+          ),
+          BarItem(
+            icon: Icons.tune_rounded,
+            title: 'Settings',
+          ),
+        ],
+      ),
+    );
+```
+
 
 Feel free to report issue even if you are using a another icon pack and see some problem.
 

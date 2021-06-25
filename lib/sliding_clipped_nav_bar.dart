@@ -1,5 +1,6 @@
 library sliding_clipped_nav_bar;
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 export 'src/menu_item.dart';
 import 'src/menu_item.dart';
@@ -16,10 +17,10 @@ class SlidingClippedNavBar extends StatelessWidget {
   final double iconSize;
 
   /// Color of the selected item which indicate selected.
-  final Color activeColor;
+  final Color? _activeColor;
 
   /// Inactive color of item, which actually color icons.
-  final Color? inactiveColor;
+  final Color? _inactiveColor;
 
   /// Callback when item is pressed.
   final OnButtonPressCallback onButtonPressed;
@@ -31,11 +32,33 @@ class SlidingClippedNavBar extends StatelessWidget {
     required this.barItems,
     required this.selectedIndex,
     required this.onButtonPressed,
+    required Color activeColor,
+    Color? inactiveColor,
     this.iconSize = 30,
-    this.activeColor = const Color(0xFF01579B),
     this.backgroundColor = Colors.white,
-    this.inactiveColor,
-  })  : assert(barItems.length > 1, 'You must provide minimum 2 Menu items'),
+  })  : assert(
+            !barItems.any((element) =>
+                (element.activeColor != null || element.inactiveColor != null)),
+            '''You don\'t need to assign each item active & inactive color,
+            when you already assigned global active color.'''),
+        _activeColor = activeColor,
+        _inactiveColor = inactiveColor ?? activeColor.withOpacity(0.3),
+        assert(barItems.length > 1, 'You must provide minimum 2 Menu items'),
+        assert(barItems.length < 5, 'Maximum menu item count is 4');
+
+  SlidingClippedNavBar.colorful({
+    required this.barItems,
+    required this.selectedIndex,
+    required this.onButtonPressed,
+    this.iconSize = 30,
+    this.backgroundColor = Colors.white,
+  })  : assert(
+            !barItems.any((element) =>
+                (element.activeColor == null || element.inactiveColor == null)),
+            'You need to assign each item active & inactive color'),
+        _activeColor = null,
+        _inactiveColor = null,
+        assert(barItems.length > 1, 'You must provide minimum 2 Menu items'),
         assert(barItems.length < 5, 'Maximum menu item count is 4');
 
   @override
@@ -43,8 +66,8 @@ class SlidingClippedNavBar extends StatelessWidget {
     return BuildBar(
       buttons: barItems,
       iconSize: iconSize,
-      activeColor: activeColor,
-      inactiveColor: inactiveColor ?? activeColor.withOpacity(0.3),
+      activeColor: _activeColor,
+      inactiveColor: _inactiveColor,
       backgroundColor: backgroundColor,
       onButtonPress: onButtonPressed,
       selectedIndex: selectedIndex,

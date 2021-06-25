@@ -7,12 +7,10 @@ typedef OnButtonPressCallback = void Function(int index);
 
 class BuildBar extends StatelessWidget {
   final List<BarItem> buttons;
-
   final int selectedIndex;
   final double iconSize;
-  final Color activeColor;
-  final Color inactiveColor;
-
+  final Color? activeColor;
+  final Color? inactiveColor;
   final OnButtonPressCallback onButtonPress;
   final Color backgroundColor;
 
@@ -45,12 +43,12 @@ class BuildBar extends StatelessWidget {
               icon: item.icon,
               size: iconSize,
               title: item.title,
-              activeColor: activeColor,
+              activeColor: item.activeColor ?? activeColor!,
+              inactiveColor: item.inactiveColor ?? inactiveColor!,
               index: buttonIndex,
               isSelected: buttonIndex == selectedIndex ? true : false,
               onTap: onButtonPress,
               slidingCardColor: backgroundColor,
-              inactiveColor: inactiveColor,
               itemCount: buttons.length,
             );
           },
