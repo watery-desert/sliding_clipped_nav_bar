@@ -28,6 +28,7 @@ class SlidingClippedNavBar extends StatelessWidget {
   /// background color of the bar.
   final Color backgroundColor;
 
+  /// User when you want to set global active and inactive color.
   SlidingClippedNavBar({
     required this.barItems,
     required this.selectedIndex,
@@ -46,6 +47,7 @@ class SlidingClippedNavBar extends StatelessWidget {
         assert(barItems.length > 1, 'You must provide minimum 2 Menu items'),
         assert(barItems.length < 5, 'Maximum menu item count is 4');
 
+  /// User you want to set individual item active & inactive color.
   SlidingClippedNavBar.colorful({
     required this.barItems,
     required this.selectedIndex,

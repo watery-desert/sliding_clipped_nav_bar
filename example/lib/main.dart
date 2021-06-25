@@ -81,35 +81,24 @@ class _MyHomePageState extends State<MyHomePage> {
               curve: Curves.easeOutQuad);
         },
         iconSize: 30,
-        // 24 should be okay
-        // activeColor:  Color(0xFF01579B),
-        activeColor: Colors.green,
-        inactiveColor: Colors.red,
+        activeColor: Color(0xFF01579B),
         selectedIndex: selectedIndex,
         barItems: [
           BarItem(
             icon: Icons.event,
             title: 'Events',
-            // activeColor: Colors.amber,
-            // inactiveColor: Colors.red,
           ),
           BarItem(
             icon: Icons.search_rounded,
             title: 'Search',
-            // activeColor: Colors.red,
-            // inactiveColor: Colors.green,
           ),
           BarItem(
             icon: Icons.bolt_rounded,
             title: 'Energy',
-            // activeColor: Colors.green,
-            // inactiveColor: Colors.blue,
           ),
           BarItem(
             icon: Icons.tune_rounded,
             title: 'Settings',
-            // activeColor: Colors.purple,
-            // inactiveColor: Colors.brown,
           ),
         ],
       ),

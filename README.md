@@ -48,7 +48,9 @@ backgroundColor → `Color`
  -  background color of the bar.\
 *optional [Colors.white]*
 
-### Basic use
+
+## How to use?
+ - Using `SlidingClippedNavBar()` when you want global active and inactive color.
 ```dart
  return Scaffold(
      
@@ -91,6 +93,55 @@ backgroundColor → `Color`
     );
 ```
 
+ - Using `SlidingClippedNavBar.colorful()` when you want to set individual item active & inactive color.
+ ```dart
+ return Scaffold(
+     
+      body: PageView(
+      controller: controller,
+...
+      ),
+      bottomNavigationBar: SlidingClippedNavBar.colorful(
+        backgroundColor: Colors.white,
+        onButtonPressed: (index) {
+          setState(() {
+            selectedIndex = index;
+          });
+          controller.animateToPage(selectedIndex,
+              duration: const Duration(milliseconds: 400),
+              curve: Curves.easeOutQuad);
+        },
+        iconSize: 30,
+        selectedIndex: selectedIndex,
+        barItems: [
+          BarItem(
+            icon: Icons.event,
+            title: 'Events',
+            activeColor: Colors.amber,
+            inactiveColor: Colors.red,
+          ),
+          BarItem(
+            icon: Icons.search_rounded,
+            title: 'Search',
+            activeColor: Colors.red,
+            inactiveColor: Colors.green,
+          ),
+          BarItem(
+            icon: Icons.bolt_rounded,
+            title: 'Energy',
+            activeColor: Colors.green,
+            inactiveColor: Colors.blue,
+          ),
+          BarItem(
+            icon: Icons.tune_rounded,
+            title: 'Settings',
+            activeColor: Colors.purple,
+            inactiveColor: Colors.brown,
+          ),
+        ],
+      ),
+    );
+```
 
 Feel free to report issue even if you are using a another icon pack and see some problem.
 
