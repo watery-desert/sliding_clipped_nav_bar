@@ -1,13 +1,23 @@
 import 'package:flutter/material.dart';
 
 class BarItem {
-  /// ber item icon which shown when item is inactive.
+  /// bar item icon which is shown when item is inactive.
   final IconData icon;
 
-  /// ber item text which shown when item is active.
+  /// bar item text which is shown when item is active.
   final String title;
+  
+  /// bar item color which is used when the item is active
+  final Color? inactiveColor;
+  
+  /// bar item color which is used when the item is active
+  final Color? activeColor;
+  
+  
   BarItem({
     required this.title,
     required this.icon,
+    this.inactiveColor,
+    this.activeColor
   });
 }
