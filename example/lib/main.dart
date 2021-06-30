@@ -38,6 +38,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: PageView(
+        physics: NeverScrollableScrollPhysics(),
         controller: controller,
         children: [
           Center(

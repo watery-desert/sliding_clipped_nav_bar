@@ -1,13 +1,15 @@
 # sliding_clipped_nav_bar
 
-Navigation bar inspired by Toolbar-icons-animation (designed by Cuberto).
+## Developed by watery desert
+
+<img src="https://github.com/watery-desert/assets/blob/main/watery_desert_logo.png?raw=true" width="200">
 
 ## Demo Screen Recording
 <img src="https://github.com/watery-desert/assets/blob/main/sliding_clipped_nav_bar/screen_recording.gif?raw=true"  width="300"/>
 
 ## **Design Credit**
 
-<img src="https://github.com/watery-desert/assets/blob/main/sliding_clipped_nav_bar/credit_video.gif?raw=true"  width="500"/>
+<img src="https://github.com/watery-desert/assets/blob/main/sliding_clipped_nav_bar/credit_video.gif?raw=true"  width="400"/>
 
 [Toolbar icons animation by Cuberto](https://dribbble.com/shots/5605168-Toolbar-icons-animation)
 
@@ -55,6 +57,7 @@ backgroundColor → `Color`
  return Scaffold(
      
       body: PageView(
+      physics: NeverScrollableScrollPhysics(),       
       controller: controller,
 ...
       ),
@@ -98,6 +101,7 @@ backgroundColor → `Color`
  return Scaffold(
      
       body: PageView(
+      physics: NeverScrollableScrollPhysics(),
       controller: controller,
 ...
       ),
@@ -143,14 +147,17 @@ backgroundColor → `Color`
     );
 ```
 
-Feel free to report issue even if you are using a another icon pack and see some problem.
-
-Check the example app the implementation is pretty straightforward.
-
-Please consider giving me star and see my other repositories. This will motivate me to keep working.
+Feel free to report issue even if you are using a another icon pack and see some problem. Check the example app the implementation is pretty straightforward. Please consider giving me star and see my other repositories. This will motivate me to keep working.
 
 
-### Follow me on social media
-[Instagram](https://www.instagram.com/watery_desert)
+## Follow me on social media
 
-[Twitter](https://www.twitter.com/watery_desert)
+[![alt text][1.1]][1]
+[![alt text][2.1]][2]
+
+[1.1]: https://github.com/watery-desert/assets/blob/main/social_logo/twitter.png?raw=true
+
+[2.1]: https://github.com/watery-desert/assets/blob/main/social_logo/instagram.png?raw=true
+
+[1]: https://twitter.com/watery_desert
+[2]: https://www.instagram.com/watery_desert/
