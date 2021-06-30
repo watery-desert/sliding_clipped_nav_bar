@@ -1,6 +1,5 @@
-
 <p align="center">
-<img src="https://github.com/watery-desert/assets/blob/main/watery_desert_logo.png?raw=true" height="200" alt="Sliding Clipped Nav Bar" />
+<img src="https://raw.githubusercontent.com/watery-desert/assets/main/watery_desert_logo.png" height="200" alt="Sliding Clipped Nav Bar" />
 </p>
 
 # sliding_clipped_nav_bar
