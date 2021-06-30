@@ -6,7 +6,7 @@
 # sliding_clipped_nav_bar
 
 ## Demo Screen Recording
-<img src="https://github.com/watery-desert/assets/blob/main/sliding_clipped_nav_bar/screen_recording.gif?raw=true"  width="300"/>
+<img src="https://raw.githubusercontent.com/watery-desert/assets/main/sliding_clipped_nav_bar/demo_recording.gif"  width="500"/>
 
 ## **Design Credit**
 

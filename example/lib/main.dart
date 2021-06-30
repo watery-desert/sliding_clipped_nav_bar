@@ -24,13 +24,13 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  late PageController controller;
+  late PageController _pageController;
   int selectedIndex = 0;
 
   @override
   void initState() {
     super.initState();
-    controller = PageController(initialPage: selectedIndex);
+    _pageController = PageController(initialPage: selectedIndex);
   }
 
   @override
@@ -39,34 +39,38 @@ class _MyHomePageState extends State<MyHomePage> {
       backgroundColor: Colors.white,
       body: PageView(
         physics: NeverScrollableScrollPhysics(),
-        controller: controller,
+        controller: _pageController,
         children: [
-          Center(
+          Container(
+            alignment: Alignment.center,
             child: Icon(
               Icons.event,
               size: 56,
-              color: Colors.amber,
+              color: Colors.amber[300],
             ),
           ),
-          Center(
+          Container(
+            alignment: Alignment.center,
             child: Icon(
-              Icons.search_rounded,
+              Icons.search,
               size: 56,
-              color: Colors.amber,
+              color: Colors.red[400],
             ),
           ),
-          Center(
+          Container(
+            alignment: Alignment.center,
             child: Icon(
-              Icons.bolt_rounded,
+              Icons.bolt,
               size: 56,
-              color: Colors.amber,
+              color: Colors.green[400],
             ),
           ),
-          Center(
+          Container(
+            alignment: Alignment.center,
             child: Icon(
               Icons.tune_rounded,
               size: 56,
-              color: Colors.amber,
+              color: Colors.blue[400],
             ),
           ),
         ],
@@ -77,7 +81,7 @@ class _MyHomePageState extends State<MyHomePage> {
           setState(() {
             selectedIndex = index;
           });
-          controller.animateToPage(selectedIndex,
+          _pageController.animateToPage(selectedIndex,
               duration: const Duration(milliseconds: 400),
               curve: Curves.easeOutQuad);
         },
