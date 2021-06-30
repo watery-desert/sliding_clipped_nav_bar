@@ -1,15 +1,11 @@
+<center><img src="https://github.com/watery-desert/assets/blob/main/watery_desert_logo.png?raw=true" width="200"></center>
+
 # sliding_clipped_nav_bar
-
-## Developed by watery desert
-
-<img src="https://github.com/watery-desert/assets/blob/main/watery_desert_logo.png?raw=true" width="200">
 
 ## Demo Screen Recording
 <img src="https://github.com/watery-desert/assets/blob/main/sliding_clipped_nav_bar/screen_recording.gif?raw=true"  width="300"/>
 
 ## **Design Credit**
-
-<img src="https://github.com/watery-desert/assets/blob/main/sliding_clipped_nav_bar/credit_video.gif?raw=true"  width="400"/>
 
 [Toolbar icons animation by Cuberto](https://dribbble.com/shots/5605168-Toolbar-icons-animation)
 
