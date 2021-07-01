@@ -43,12 +43,9 @@ onButtonPressed → `OnButtonPressCallback`
 backgroundColor → `Color`
  -  background color of the bar.\
 *optional [Colors.white]*
-
-
 </summary> 
 </details>
 <br>
-
 Add `SlidingClippedNavBar()` as `bottomNavigationBar` of `Scaffold()` and body would be `PageView()` with `NeverScrollableScrollPhysics()` don't try to upate the seleted index from `onPageChanged` or will see some weird behaviour. You can use `Stack()` or `AnimatedSwitcher()` for custom page transition animation. 
 
 Keep that in mind this navigation menu is taller than normal for small screen it might cover more screen real estate.
