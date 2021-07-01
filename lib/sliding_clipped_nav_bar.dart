@@ -7,7 +7,7 @@ import 'src/menu_item.dart';
 import 'src/build_bar.dart';
 
 class SlidingClippedNavBar extends StatelessWidget {
-  /// List of bar items that shows horizontally.
+  /// List of bar items shown horizontally, Minimum 2 and maximum 4 items.
   final List<BarItem> barItems;
 
   /// Selected index of the bar items.

@@ -2,26 +2,22 @@
 <img src="https://raw.githubusercontent.com/watery-desert/assets/main/watery_desert_logo.png" height="200" alt="Sliding Clipped Nav Bar" />
 </p>
 
-# sliding_clipped_nav_bar
+# Sliding Clipped Nav Bar
 
-## Demo Screen Recording
 <img src="https://raw.githubusercontent.com/watery-desert/assets/main/sliding_clipped_nav_bar/demo_recording.gif"  width="500"/>
 
 ## **Design Credit**
 
 [Toolbar icons animation by Cuberto](https://dribbble.com/shots/5605168-Toolbar-icons-animation)
 
-### Disclaimer
-The bar height is taller than normal and might not be suitable for small devices. Also don't make the icon size too big or they will be clipped.
 
-**Suitable icon size**
- - FontAwesomeIcons: 24
- - MaterialIcons: 30
-
-## API reference
+## How to use?
+<details>
+<summary>API reference</summary>
+<br></br>
 
 barItems → `List<BarItem>`
-- List of bar items that shows horizontally.\
+- List of bar items that shows horizontally, Minimum 2 and maximum 4 items.\
  *required*
 
 selectedIndex → `int`
@@ -49,7 +45,19 @@ backgroundColor → `Color`
 *optional [Colors.white]*
 
 
-## How to use?
+</summary> 
+</details>
+<br></br>
+
+Add `SlidingClippedNavBar()` as `bottomNavigationBar` of `Scaffold()` and body would be `PageView()` with `NeverScrollableScrollPhysics()` don't try to upate the seleted index from `onPageChanged` or will see some weird behaviour. You can use `Stack()` or `AnimatedSwitcher()` for custom page transition animation. 
+
+Keep that in mind this navigation menu is taller than normal for small screen it might cover more screen real estate.
+
+### **Do and don't**
+ - Don't make icon size too big.
+   - FontAwesomeIcons: 24 
+   - MaterialIcons: 30
+
  - Using `SlidingClippedNavBar()` when you want global active and inactive color.
 ```dart
  return Scaffold(
@@ -145,7 +153,7 @@ backgroundColor → `Color`
     );
 ```
 
-Feel free to report issue even if you are using a another icon pack and see some problem. Check the example app the implementation is pretty straightforward. Please consider giving me star and see my other repositories. This will motivate me to keep working.
+Feel free to report issue even if you are using a another icon pack and see some problem. Please consider giving me star and see my other repositories. This will motivate me to keep working.
 
 
 ## Follow me on social media
