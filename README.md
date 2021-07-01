@@ -14,7 +14,7 @@
 ## How to use?
 <details>
 <summary>API reference</summary>
-<br></br>
+<br>
 
 barItems → `List<BarItem>`
 - List of bar items that shows horizontally, Minimum 2 and maximum 4 items.\
@@ -47,7 +47,7 @@ backgroundColor → `Color`
 
 </summary> 
 </details>
-<br></br>
+<br>
 
 Add `SlidingClippedNavBar()` as `bottomNavigationBar` of `Scaffold()` and body would be `PageView()` with `NeverScrollableScrollPhysics()` don't try to upate the seleted index from `onPageChanged` or will see some weird behaviour. You can use `Stack()` or `AnimatedSwitcher()` for custom page transition animation. 
 
