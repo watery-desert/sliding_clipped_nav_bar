@@ -71,7 +71,7 @@ class _AnimatedButtonState extends State<AnimatedButton>
   }
 
   @override
-  void didUpdateWidget(covariant AnimatedButton oldWidget) {
+  void didUpdateWidget(AnimatedButton oldWidget) {
     super.didUpdateWidget(oldWidget);
 
     if (oldWidget.isSelected != widget.isSelected && !widget.isSelected) {
