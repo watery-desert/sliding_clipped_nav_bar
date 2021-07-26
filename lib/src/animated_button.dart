@@ -74,8 +74,7 @@ class _AnimatedButtonState extends State<AnimatedButton> with SingleTickerProvid
               parent: _animationController,
               curve: Interval(0.5, 0.7),
             ),
-          )
-              .value),
+          ).value),
     );
   }
 
@@ -85,6 +84,11 @@ class _AnimatedButtonState extends State<AnimatedButton> with SingleTickerProvid
 
     if (oldWidget.isSelected != widget.isSelected && !widget.isSelected) {
       _animationController.reverse();
+    }
+
+    // fix a bug in coded selection of different index
+    if (oldWidget.isSelected != widget.isSelected && widget.isSelected) {
+      _animationController.forward(from: 0.3);
     }
   }
 
