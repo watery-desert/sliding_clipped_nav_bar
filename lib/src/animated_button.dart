@@ -68,8 +68,7 @@ class _AnimatedButtonState extends State<AnimatedButton> with SingleTickerProvid
       height: widget.buttonHeight,
       child: SlicedCard.draw(
           cardColor: widget.slidingCardColor,
-          heightFraction: Tween<double>(begin: 0.1, end: 0.4)
-              .animate(
+          heightFraction: Tween<double>(begin: 0.1, end: 0.4).animate(
             CurvedAnimation(
               parent: _animationController,
               curve: Interval(0.5, 0.7),
@@ -132,7 +131,7 @@ class _AnimatedButtonState extends State<AnimatedButton> with SingleTickerProvid
           animation: _animationController,
           builder: (_, __) => Stack(
             alignment: Alignment.center,
-            fit: StackFit.passthrough,
+            // fit: StackFit.passthrough,
             children: [
               Container(
                 color: slidingCardColor,

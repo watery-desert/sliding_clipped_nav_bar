@@ -51,7 +51,7 @@ class BuildBar extends StatelessWidget {
               icon: item.icon,
               iconSize: iconSize,
               textSize: textSize,
-              buttonHeight: barHeight * 0.56,
+              buttonHeight: barHeight * 0.64,
               title: item.title,
               activeColor: item.activeColor ?? activeColor!,
               inactiveColor: item.inactiveColor ?? inactiveColor!,
