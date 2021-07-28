@@ -7,6 +7,10 @@ import 'src/menu_item.dart';
 import 'src/build_bar.dart';
 
 class SlidingClippedNavBar extends StatelessWidget {
+  static const DEFAULT_BAR_HEIGHT = 100.0;
+  static const DEFAULT_TEXT_SIZE = 16.0;
+  static const DEFAULT_ICON_SIZE = 30.0;
+
   /// List of bar items shown horizontally, Minimum 2 and maximum 4 items.
   final List<BarItem> barItems;
 
@@ -47,9 +51,9 @@ class SlidingClippedNavBar extends StatelessWidget {
     required this.onButtonPressed,
     required Color activeColor,
     Color? inactiveColor,
-    this.iconSize = 30,
-    this.textSize = 16,
-    this.barHeight = 100,
+    this.iconSize = DEFAULT_ICON_SIZE,
+    this.textSize = DEFAULT_TEXT_SIZE,
+    this.barHeight = DEFAULT_BAR_HEIGHT,
     this.backgroundColor = Colors.white,
     BoxDecoration? barDecoration,
     TextStyle? textStyle,

@@ -35,12 +35,16 @@ class BuildBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var boxDecoration = BoxDecoration(
+      color: backgroundColor,
+    );
+    if (barDecoration != null) {
+      boxDecoration = barDecoration!.copyWith(color: backgroundColor);
+    }
     return Container(
       clipBehavior: Clip.hardEdge,
       height: barHeight,
-      decoration: barDecoration ?? BoxDecoration(
-        color: backgroundColor,
-      ),
+      decoration: boxDecoration,
       alignment: Alignment.center,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
