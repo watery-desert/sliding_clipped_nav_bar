@@ -1,3 +1,8 @@
+## 2.0.0
+ - added test
+ - reduced the height to 60, doesn't look ugly on android
+ - updated example app for colorful
+
 ## 1.0.3
  - fix broken image link.
 ## 1.0.2

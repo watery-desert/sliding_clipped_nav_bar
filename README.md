@@ -1,61 +1,78 @@
 <p align="center">
-<img src="https://raw.githubusercontent.com/watery-desert/assets/main/watery_desert/logo.png" height="200" alt="Sliding Clipped Nav Bar" />
+   <img src="https://raw.githubusercontent.com/watery-desert/assets/main/sliding_clipped_nav_bar/package_cover.png" alt="Loading Animation Widget" />
 </p>
-
 <div align="center">
-
-[![Instagram Badge](https://img.shields.io/badge/-watery_desert-e84393?style=flat-square&labelColor=e84393&logo=instagram&logoColor=white)](https://instagram.com/watery_desert)
-[![Twitter Badge](https://img.shields.io/badge/-watery_desert-1ca0f1?style=flat-square&logo=twitter&logoColor=white&link=https://twitter.com/watery_desert)](https://twitter.com/watery_desert)
+   <a href="https://instagram.com/watery_desert">
+   <img src="https://raw.githubusercontent.com/watery-desert/assets/main/social_logo/instagram.png" height="24" alt="instagram: watery_desert"></a>
+   <a href="https://twitter.com/watery_desert">
+   <img src="https://raw.githubusercontent.com/watery-desert/assets/main/social_logo/twitter.png" height="24" alt="twitter: watery_desert"></a>
+   <a href="https://dribbble.com/watery_desert">
+   <img src="https://raw.githubusercontent.com/watery-desert/assets/main/social_logo/dribbble.png" height="24" alt="dribbble: watery_desert"></a>
+   <a href="https://www.youtube.com/channel/UCMr8V70B4402CNOJEYQ30Qg">
+   <img src="https://raw.githubusercontent.com/watery-desert/assets/main/social_logo/youtube.png" height="24" alt="youtube: watery_desert"></a>
 </div>
+<br>
 
-# Sliding Clipped Nav Bar
-
-<img src="https://raw.githubusercontent.com/watery-desert/assets/main/sliding_clipped_nav_bar/demo_recording.gif"  width="500"/>
-
-## **Design Credit**
-
-[Toolbar icons animation by Cuberto](https://dribbble.com/shots/5605168-Toolbar-icons-animation)
 
 
 ## How to use?
+
+Add `sliding_clipped_nav_bar:` to your `pubspec.yaml` dependencies then run `flutter pub get`
+
+```yaml
+ dependencies:
+  sliding_clipped_nav_bar:
+```
+Then import the package to use
+
+```dart 
+import 'package:sliding_clipped_nav_bar/sliding_clipped_nav_bar.dart';
+```
+
+
+Add `SlidingClippedNavBar()` to `bottomNavigationBar` property of `Scaffold()` and add `PageView()` to `body` with `NeverScrollableScrollPhysics()` don't try to upate the seleted index from `onPageChanged` or will see some weird behaviour. You can use `Stack()` or `AnimatedSwitcher()` for custom page transition animation.
+
 <details>
-<summary>API reference</summary>
-<br>
+  <summary>API reference</summary>
+  <br>
 
-barItems → `List<BarItem>`
-- List of bar items that shows horizontally, Minimum 2 and maximum 4 items.\
- *required*
+  barItems → `List<BarItem>`
+  - List of bar items that shows horizontally, Minimum 2 and maximum 4 items.\
+  *required*
 
-selectedIndex → `int`
-- Selected index of the bar items.\
- *required*
+  selectedIndex → `int`
+  - Selected index of the bar items.\
+  *required*
 
-iconSize → `double`
- - Size of all icons (inactive items), don't make it too big or will be clipped.\
- *optional [30]*
+  iconSize → `double`
+  - Size of all icons (inactive items), don't make it too big or will be clipped.\
+  *optional [30]*
 
-activeColor → `Color`
- - Color of the selected item which indicate selected.\
-*required*
+  activeColor → `Color`
+  - Color of the selected item which indicate selected.\
+  *required*
 
-inactiveColor → `Color?`
- - Inactive color of item, which actually color icons.\
-*nullable* 
+  inactiveColor → `Color?`
+  - Inactive color of item, which actually color icons.\
+  *nullable* 
 
-onButtonPressed → `OnButtonPressCallback`
- - Callback when item is pressed.\
-*required* 
+  onButtonPressed → `OnButtonPressCallback`
+  - Callback when item is pressed.\
+  *required* 
 
-backgroundColor → `Color`
- -  background color of the bar.\
-*optional [Colors.white]*
-</summary> 
+  backgroundColor → `Color`
+  -  background color of the bar.\
+  *optional [Colors.white]*
+  </summary> 
 </details>
 <br>
 
-Add `SlidingClippedNavBar()` as `bottomNavigationBar` of `Scaffold()` and body would be `PageView()` with `NeverScrollableScrollPhysics()` don't try to upate the seleted index from `onPageChanged` or will see some weird behaviour. You can use `Stack()` or `AnimatedSwitcher()` for custom page transition animation. 
+## **Design Credit & screen recording**
 
-Keep that in mind this navigation menu is taller than normal for small screen it might cover more screen real estate.
+[Toolbar icons animation by Cuberto](https://dribbble.com/shots/5605168-Toolbar-icons-animation)
+
+<img src="https://raw.githubusercontent.com/watery-desert/assets/main/sliding_clipped_nav_bar/demo_recording.gif"  width="280"/>
+
 
 ### **Do and don't**
  - Don't make icon size too big.
@@ -93,14 +110,7 @@ Keep that in mind this navigation menu is taller than normal for small screen it
             icon: Icons.search_rounded,
             title: 'Search',
           ),
-          BarItem(
-            icon: Icons.bolt_rounded,
-            title: 'Energy',
-          ),
-          BarItem(
-            icon: Icons.tune_rounded,
-            title: 'Settings',
-          ),
+           /// Add more BarItem if you want
         ],
       ),
     );
@@ -140,34 +150,65 @@ Keep that in mind this navigation menu is taller than normal for small screen it
             activeColor: Colors.red,
             inactiveColor: Colors.green,
           ),
-          BarItem(
-            icon: Icons.bolt_rounded,
-            title: 'Energy',
-            activeColor: Colors.green,
-            inactiveColor: Colors.blue,
-          ),
-          BarItem(
-            icon: Icons.tune_rounded,
-            title: 'Settings',
-            activeColor: Colors.purple,
-            inactiveColor: Colors.brown,
-          ),
+         /// Add more BarItem if you want
+
         ],
       ),
     );
 ```
 
-Please consider giving me star and see my other repositories. This will motivate me to keep working.
+### **FAQ**
+
+- #### How do I change the height?
+The height must be static because the animation is in vertical direction. It was like 100 then I reduced it to 60 now. And this removed the issue with the android device, previously looked huge & ugly. Now according to me should not be an issue. But if you still think needs to be reduced then please file an issue with a screenshot. I will see if I can do something.
+
+- #### There is no API to change `TextStyle` of title.
+You don't need any API to change `TextStyle` of title. Wrap the `SlidingClippedNavBar` with [DefaultTextStyle](https://api.flutter.dev/flutter/widgets/DefaultTextStyle-class.html) and provide your `TextStyle` and this will be only applied to `SlidingClippedNavBar`
+```dart 
+DefaultTextStyle(
+    style: TextStyle(),
+    child: SlidingClippedNavBar(),
+)
+```
+- #### How do I add drop shadow?
+
+Wrap `SlidingClippedNavBar` with `DecoratedBox` or `Container` and pass `BoxDecoration` to `decoration` property. `BoxDecoration` takes list of `boxShadow` there you can pass your drop shadow.
+  ``` dart
+  DecoratedBox(
+      decoration: BoxDecoration(
+        boxShadow: [
+          BoxShadow(
+              color: Colors.black.withOpacity(0.2),
+              offset: Offset(0, 4),
+              blurRadius: 8.0)
+        ],
+      ),
+      child: SlidingClippedNavBar()
+  )
+  ```
+- #### How do I change the corner radius of the navigation bar?
+Wrap `SlidingClippedNavBar` with ClipRRect and pass `BorderRadius` to `borderRadius` property.
+``` dart
+  ClipRRect(
+      borderRadius: const BorderRadius.vertical(
+        top: Radius.circular(16),
+      ),
+      child: SlidingClippedNavBar(
+    )                
+```
 
 
-<!-- ## Follow me on social media
+<br>
+<details>
+   <summary> All package list</summary>
+   <br>
 
-[![alt text][1.1]][1]
-[![alt text][2.1]][2]
+  ➜ [Sliding Clipped Nav Bar](https://github.com/watery-desert/sliding_clipped_nav_bar)\
+  ● [Water Drop Nav Bar](https://github.com/watery-desert/water_drop_nav_bar)\
+  ● [Swipeable Tile](https://github.com/watery-desert/swipeable_tile)\
+  ● [Loading Animation Widget](https://github.com/watery-desert/loading_animation_widget)
 
-[1.1]: https://github.com/watery-desert/assets/blob/main/social_logo/twitter.png?raw=true
+   </summary> 
+</details>
+<br>
 
-[2.1]: https://github.com/watery-desert/assets/blob/main/social_logo/instagram.png?raw=true
-
-[1]: https://twitter.com/watery_desert
-[2]: https://www.instagram.com/watery_desert/ -->

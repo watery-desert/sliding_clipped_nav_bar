@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'build_bar.dart';
-import './paint/ripple_effect.dart';
-import 'paint/sliced_card.dart';
+import '../nav_bar_body.dart';
+import '../paint/ripple_effect.dart';
+import '../paint/sliced_card.dart';
 
-class AnimatedButton extends StatefulWidget {
+class NavBarButton extends StatefulWidget {
   final String title;
   final IconData icon;
   final bool isSelected;
@@ -15,7 +15,7 @@ class AnimatedButton extends StatefulWidget {
   final int itemCount;
 
   final OnButtonPressCallback onTap;
-  const AnimatedButton({
+  const NavBarButton({
     Key? key,
     required this.icon,
     required this.size,
@@ -30,10 +30,10 @@ class AnimatedButton extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  _AnimatedButtonState createState() => _AnimatedButtonState();
+  _NavBarButtonState createState() => _NavBarButtonState();
 }
 
-class _AnimatedButtonState extends State<AnimatedButton>
+class _NavBarButtonState extends State<NavBarButton>
     with SingleTickerProviderStateMixin {
   late AnimationController _animationController;
 
@@ -51,9 +51,9 @@ class _AnimatedButtonState extends State<AnimatedButton>
   }
 
   Widget _buildCard(double height) {
-    final deviceWidth = MediaQuery.of(context).size.width;
+    final double deviceWidth = MediaQuery.of(context).size.width;
 
-    return Container(
+    return SizedBox(
       // width: 70,
       width: deviceWidth / widget.itemCount,
       height: height,
@@ -63,7 +63,10 @@ class _AnimatedButtonState extends State<AnimatedButton>
               .animate(
                 CurvedAnimation(
                   parent: _animationController,
-                  curve: Interval(0.5, 0.7),
+                  curve: const Interval(
+                    0.5,
+                    0.7,
+                  ),
                 ),
               )
               .value),
@@ -71,9 +74,11 @@ class _AnimatedButtonState extends State<AnimatedButton>
   }
 
   @override
-  void didUpdateWidget(AnimatedButton oldWidget) {
+  void didUpdateWidget(NavBarButton oldWidget) {
     super.didUpdateWidget(oldWidget);
-
+    if (oldWidget.isSelected != widget.isSelected && widget.isSelected) {
+      _animationController.forward();
+    }
     if (oldWidget.isSelected != widget.isSelected && !widget.isSelected) {
       _animationController.reverse();
     }
@@ -87,7 +92,7 @@ class _AnimatedButtonState extends State<AnimatedButton>
 
   // copied from here
   //https://stackoverflow.com/a/62536187/16122873
-  double textHeight(text, textStyle) => (TextPainter(
+  double textHeight(String text, TextStyle textStyle) => (TextPainter(
           text: TextSpan(text: text, style: textStyle),
           maxLines: 1,
           textScaleFactor: MediaQuery.of(context).textScaleFactor,
@@ -98,14 +103,16 @@ class _AnimatedButtonState extends State<AnimatedButton>
 
   @override
   Widget build(BuildContext context) {
-    final deviceWidth = MediaQuery.of(context).size.width;
-    final activeColor = widget.activeColor;
-    final size = widget.size;
-    final index = widget.index;
-    final onTap = widget.onTap;
-    final title = widget.title;
-    final inactiveColor = widget.inactiveColor;
-    final slidingCardColor = widget.slidingCardColor;
+    final double deviceWidth = MediaQuery.of(context).size.width;
+    final Color activeColor = widget.activeColor;
+    final double size = widget.size;
+    final int index = widget.index;
+    final Function(int) onTap = widget.onTap;
+    final String title = widget.title;
+    final Color inactiveColor = widget.inactiveColor;
+    final Color slidingCardColor = widget.slidingCardColor;
+    final double eachIconWidth = deviceWidth / widget.itemCount;
+
     return GestureDetector(
       onTap: () {
         onTap(index);
@@ -117,20 +124,25 @@ class _AnimatedButtonState extends State<AnimatedButton>
         animation: _animationController,
         builder: (_, __) => Stack(
           alignment: Alignment.center,
-          children: [
+          children: <Widget>[
             Container(
               color: slidingCardColor,
-              width: 56,
-              height: 56,
+              width: eachIconWidth,
             ),
             SlideTransition(
               position: Tween<Offset>(
                 begin: Offset.zero,
-                end: Offset(0, -1.4),
+                end: const Offset(
+                  0,
+                  -1.0,
+                ),
               ).animate(
                 CurvedAnimation(
                   parent: _animationController,
-                  curve: Interval(0.3, 1.0),
+                  curve: const Interval(
+                    0.3,
+                    1.0,
+                  ),
                 ),
               ),
               child: Icon(
@@ -141,29 +153,43 @@ class _AnimatedButtonState extends State<AnimatedButton>
             ),
             SlideTransition(
               position: Tween<Offset>(
-                begin: Offset(0, 0.8),
-                end: Offset(0, -0.8),
+                begin: const Offset(
+                  0,
+                  0.8,
+                ),
+                end: const Offset(
+                  0,
+                  -0.8,
+                ),
               ).animate(
                 CurvedAnimation(
                   parent: _animationController,
-                  curve: Interval(0.3, 1.0),
+                  curve: const Interval(
+                    0.3,
+                    1.0,
+                  ),
                 ),
               ),
-              child: _buildCard(64),
+              child: _buildCard(60),
             ),
             SlideTransition(
               position: Tween<Offset>(
-                begin: Offset(0, 1.6),
+                begin: const Offset(
+                  0,
+                  1.4,
+                ),
                 end: Offset.zero,
               ).animate(
                 CurvedAnimation(
                   parent: _animationController,
-                  curve: Interval(0.3, 1.0),
+                  curve: const Interval(
+                    0.3,
+                    1.0,
+                  ),
                 ),
               ),
               child: Container(
                 width: deviceWidth / widget.itemCount,
-                // color: Colors.amber,
                 alignment: Alignment.center,
                 height: textHeight(title, getTextStyle()),
                 child: Text(
@@ -175,16 +201,25 @@ class _AnimatedButtonState extends State<AnimatedButton>
               ),
             ),
             Transform.translate(
-              offset: Offset(0, 42),
+              offset: const Offset(
+                0,
+                42,
+              ),
               child: _buildCard(56.0),
             ),
             Transform.translate(
-              offset: Offset(0, 25),
+              offset: const Offset(
+                0,
+                25,
+              ),
               child: ScaleTransition(
                 scale: Tween<double>(begin: 0.0, end: 1.0).animate(
                   CurvedAnimation(
                     parent: _animationController,
-                    curve: Interval(0.3, 1.0),
+                    curve: const Interval(
+                      0.3,
+                      1.0,
+                    ),
                   ),
                 ),
                 child: Container(
@@ -204,7 +239,10 @@ class _AnimatedButtonState extends State<AnimatedButton>
                     .animate(
                       CurvedAnimation(
                         parent: _animationController,
-                        curve: Interval(0.0, 0.3),
+                        curve: const Interval(
+                          0.0,
+                          0.3,
+                        ),
                       ),
                     )
                     .value,
@@ -212,7 +250,10 @@ class _AnimatedButtonState extends State<AnimatedButton>
                     .animate(
                       CurvedAnimation(
                         parent: _animationController,
-                        curve: Interval(0.1, 0.3),
+                        curve: const Interval(
+                          0.1,
+                          0.3,
+                        ),
                       ),
                     )
                     .value,
@@ -223,5 +264,11 @@ class _AnimatedButtonState extends State<AnimatedButton>
         ),
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    _animationController.dispose();
+    super.dispose();
   }
 }

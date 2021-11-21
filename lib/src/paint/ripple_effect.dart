@@ -13,7 +13,7 @@ class RippleEffect extends CustomPainter {
     required double size,
     required double strokeWidth,
   }) =>
-      Container(
+      SizedBox(
         width: size,
         height: size,
         child: CustomPaint(

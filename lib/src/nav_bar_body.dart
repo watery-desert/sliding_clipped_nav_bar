@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-import 'animated_button.dart';
-import 'menu_item.dart';
+import 'widget/nav_bar_button.dart';
+import 'model/menu_item.dart';
 
 typedef OnButtonPressCallback = void Function(int index);
 
-class BuildBar extends StatelessWidget {
+class NavBarBody extends StatelessWidget {
   final List<BarItem> buttons;
   final int selectedIndex;
   final double iconSize;
@@ -14,7 +14,7 @@ class BuildBar extends StatelessWidget {
   final OnButtonPressCallback onButtonPress;
   final Color backgroundColor;
 
-  const BuildBar({
+  const NavBarBody({
     Key? key,
     required this.buttons,
     required this.selectedIndex,
@@ -27,9 +27,10 @@ class BuildBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final double bottomPading = MediaQuery.of(context).padding.bottom;
     return Container(
       clipBehavior: Clip.hardEdge,
-      height: 100,
+      height: 60 + bottomPading,
       decoration: BoxDecoration(
         color: backgroundColor,
       ),
@@ -37,9 +38,9 @@ class BuildBar extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: buttons.map(
-          (item) {
-            final buttonIndex = buttons.indexOf(item);
-            return AnimatedButton(
+          (BarItem item) {
+            final int buttonIndex = buttons.indexOf(item);
+            return NavBarButton(
               icon: item.icon,
               size: iconSize,
               title: item.title,

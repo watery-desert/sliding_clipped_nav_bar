@@ -7,24 +7,129 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:sliding_clipped_nav_bar/sliding_clipped_nav_bar.dart';
 
-import 'package:sliding_clipped_nav_bar/main.dart';
+import 'base_structure.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(MyApp());
+  testWidgets('expecting default values', (WidgetTester tester) async {
+    await tester.pumpWidget(
+      baseStructure(<BarItem>[
+        _barItem,
+        _barItem,
+      ], false),
+    );
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+    await tester.pumpWidget(
+      baseStructure(<BarItem>[
+        _barItemWithColor,
+        _barItemWithColor,
+      ], true),
+    );
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
+    expect(
+      tester
+          .widget<SlidingClippedNavBar>(find.byType(SlidingClippedNavBar))
+          .iconSize,
+      30.0,
+    );
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    expect(
+      tester
+          .widget<SlidingClippedNavBar>(find.byType(SlidingClippedNavBar))
+          .backgroundColor,
+      Colors.white,
+    );
+  });
+
+  testWidgets('Ticker has been disposed.', (WidgetTester tester) async {
+    await tester.pumpWidget(
+      baseStructure(<BarItem>[
+        _barItem,
+        _barItem,
+      ], false),
+    );
+
+    await tester.pumpWidget(
+      baseStructure(<BarItem>[
+        _barItemWithColor,
+        _barItemWithColor,
+      ], true),
+    );
+
+    tester.verifyTickersWereDisposed();
+  });
+
+  testWidgets(
+      'throws assertion error if items are less than two or greater than four',
+      (WidgetTester tester) async {
+    // Less than two items, throw exception
+    expect(() async {
+      await tester.pumpWidget(baseStructure(<BarItem>[
+        _barItem,
+      ], false));
+    }, throwsAssertionError);
+
+    expect(() async {
+      await tester.pumpWidget(baseStructure(<BarItem>[
+        _barItemWithColor,
+      ], true));
+    }, throwsAssertionError);
+
+    expect(() async {
+      await tester.pumpWidget(baseStructure(<BarItem>[
+        _barItem,
+        _barItem,
+        _barItem,
+        _barItem,
+        _barItem,
+      ], false));
+    }, throwsAssertionError);
+
+     expect(() async {
+      await tester.pumpWidget(baseStructure(<BarItem>[
+        _barItemWithColor,
+        _barItemWithColor,
+        _barItemWithColor,
+        _barItemWithColor,
+        _barItemWithColor,
+      ], true));
+    }, throwsAssertionError);
+  });
+
+  testWidgets(
+      'Make sure no active and inactive color added to BarItem when used SlidingClippedNavBar',
+      (WidgetTester tester) async {
+    // Less than two items, throw exception
+    expect(() async {
+      await tester.pumpWidget(baseStructure(<BarItem>[
+        _barItemWithColor,
+        _barItemWithColor,
+      ], false));
+    }, throwsAssertionError);
+  });
+
+  testWidgets(
+      'Make sure it\'s required to assign active and inactive color added to BarItem when used SlidingClippedNavBar.colorful',
+      (WidgetTester tester) async {
+    // Less than two items, throw exception
+    expect(() async {
+      await tester.pumpWidget(baseStructure(<BarItem>[
+        _barItem,
+        _barItem,
+      ], true));
+    }, throwsAssertionError);
   });
 }
+
+final BarItem _barItem = BarItem(
+  title: 'title',
+  icon: Icons.home,
+);
+
+final BarItem _barItemWithColor = BarItem(
+  title: 'title',
+  icon: Icons.home,
+  activeColor: Colors.red,
+  inactiveColor: Colors.green,
+);
