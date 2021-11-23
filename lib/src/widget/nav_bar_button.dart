@@ -159,7 +159,7 @@ class _NavBarButtonState extends State<NavBarButton>
                 ),
                 end: const Offset(
                   0,
-                  -0.8,
+                  -0.5,
                 ),
               ).animate(
                 CurvedAnimation(
