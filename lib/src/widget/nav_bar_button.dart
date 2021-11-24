@@ -50,7 +50,7 @@ class _NavBarButtonState extends State<NavBarButton>
     }
   }
 
-  Widget _buildCard(double height) {
+  Widget _buildCard(double height, [Color? color]) {
     final double deviceWidth = MediaQuery.of(context).size.width;
 
     return SizedBox(
@@ -58,7 +58,7 @@ class _NavBarButtonState extends State<NavBarButton>
       width: deviceWidth / widget.itemCount,
       height: height,
       child: SlicedCard.draw(
-          cardColor: widget.slidingCardColor,
+          cardColor: color ?? widget.slidingCardColor,
           heightFraction: Tween<double>(begin: 0.1, end: 0.4)
               .animate(
                 CurvedAnimation(
@@ -159,7 +159,7 @@ class _NavBarButtonState extends State<NavBarButton>
                 ),
                 end: const Offset(
                   0,
-                  -0.8,
+                  -0.7,
                 ),
               ).animate(
                 CurvedAnimation(

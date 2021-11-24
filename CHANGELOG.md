@@ -1,3 +1,5 @@
+## 2.0.0+1
+ - Minor bug fix.
 ## 2.0.0
  - added test
  - reduced the height to 60, doesn't look ugly on android
