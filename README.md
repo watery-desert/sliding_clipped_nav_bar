@@ -2,7 +2,7 @@
    <img src="https://raw.githubusercontent.com/watery-desert/assets/main/sliding_clipped_nav_bar/package_cover.png" alt="Loading Animation Widget" />
 </p>
 <div align="center">
-   <a href="https://instagram.com/watery_desert">
+   <a href="https://www.instagram.com/watery_desert/">
    <img src="https://raw.githubusercontent.com/watery-desert/assets/main/social_logo/instagram.png" height="24" alt="instagram: watery_desert"></a>
    <a href="https://twitter.com/watery_desert">
    <img src="https://raw.githubusercontent.com/watery-desert/assets/main/social_logo/twitter.png" height="24" alt="twitter: watery_desert"></a>
@@ -12,7 +12,6 @@
    <img src="https://raw.githubusercontent.com/watery-desert/assets/main/social_logo/youtube.png" height="24" alt="youtube: watery_desert"></a>
 </div>
 <br>
-
 
 
 ## How to use?
