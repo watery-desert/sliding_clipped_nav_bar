@@ -13,6 +13,7 @@
 </div>
 <br>
 
+[![pub package](https://img.shields.io/pub/v/sliding_clipped_nav_bar.svg?style=flat)](https://pub.dev/packages/sliding_clipped_nav_bar)
 
 ## How to use?
 
@@ -199,7 +200,7 @@ Wrap `SlidingClippedNavBar` with ClipRRect and pass `BorderRadius` to `borderRad
 
 <br>
 <details>
-   <summary> All package list</summary>
+   <summary>flutter packages developed by watery desert</summary>
    <br>
 
   ➜ [Sliding Clipped Nav Bar](https://github.com/watery-desert/sliding_clipped_nav_bar)\
