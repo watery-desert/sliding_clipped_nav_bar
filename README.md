@@ -9,7 +9,7 @@
 [![pub package](https://img.shields.io/pub/v/sliding_clipped_nav_bar.svg?style=for-the-badge)](https://pub.dev/packages/sliding_clipped_nav_bar)
 </div>
 
-
+<a href="https://www.buymeacoffee.com/watery_desert"><img src="https://img.buymeacoffee.com/button-api/?text=Support me &emoji=&slug=watery_desert&button_colour=FF5F5F&font_colour=ffffff&font_family=Lato&outline_colour=000000&coffee_colour=FFDD00"></a>
 
 
 ## How to use?
@@ -197,7 +197,7 @@ Wrap `SlidingClippedNavBar` with ClipRRect and pass `BorderRadius` to `borderRad
 
 <br>
 <details>
-   <summary>flutter packages developed by watery desert</summary>
+   <summary>All flutter packages</summary>
    <br>
 
   ➜ [Sliding Clipped Nav Bar](https://github.com/watery-desert/sliding_clipped_nav_bar)\
