@@ -8,6 +8,7 @@
 [![Twitter Badge](https://img.shields.io/badge/-Twitter-1ca0f1?style=for-the-badge&logo=twitter&logoColor=white&link=https://twitter.com/watery_desert)](https://twitter.com/watery_desert)
 [![pub package](https://img.shields.io/pub/v/sliding_clipped_nav_bar.svg?style=for-the-badge)](https://pub.dev/packages/sliding_clipped_nav_bar)
 </div>
+<hr>
 
 <a href="https://www.buymeacoffee.com/watery_desert"><img src="https://img.buymeacoffee.com/button-api/?text=Support me &emoji=&slug=watery_desert&button_colour=FF5F5F&font_colour=ffffff&font_family=Lato&outline_colour=000000&coffee_colour=FFDD00"></a>
 
