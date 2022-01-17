@@ -1,3 +1,5 @@
+## 2.0.1+6
+- Added support button again 😐
 ## 2.0.1+5
 - Removing buymeacoffee link
 ## 2.0.1+4
