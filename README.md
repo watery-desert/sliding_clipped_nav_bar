@@ -10,7 +10,9 @@
 </div>
 <hr>
 
-<a href="https://www.buymeacoffee.com/watery_desert"><img src="https://img.buymeacoffee.com/button-api/?text=Support me &emoji=&slug=watery_desert&button_colour=FF5F5F&font_colour=ffffff&font_family=Lato&outline_colour=000000&coffee_colour=FFDD00"></a>
+#### ⚠️ If you like this package please consider supporting me. This will help me to maintain free and open source flutter packages.
+
+<a href="https://www.buymeacoffee.com/watery_desert"><img src="https://raw.githubusercontent.com/watery-desert/assets/main/watery_desert/bmc-button.png" height="56"></a>
 
 
 ## How to use?
@@ -65,7 +67,7 @@ Add `SlidingClippedNavBar()` to `bottomNavigationBar` property of `Scaffold()` a
 </details>
 <br>
 
-## **Design Credit & screen recording**
+## Design Credit & screen recording
 
 [Toolbar icons animation by Cuberto](https://dribbble.com/shots/5605168-Toolbar-icons-animation)
 
@@ -155,12 +157,14 @@ Add `SlidingClippedNavBar()` to `bottomNavigationBar` property of `Scaffold()` a
     );
 ```
 
-### **FAQ**
+### FAQ
 
 - #### How do I change the height?
-The height must be constant because the animation is in vertical direction. It was like 100 then I reduced it to 60 now. And this removed the issue with the android device, previously looked huge & ugly. Now according to me should not be an issue. But if you still think needs to be reduced then please file an issue with a screenshot. I will see if I can do something.
+
+The height must be constant because the animation is in vertical direction. According to me 60 is perfect. But if you think needs to be reduced then please create an issue with a screenshot. I will see if I can do something.
 
 - #### There is no API to change `TextStyle` of title.
+
 You don't need any API to change `TextStyle` of title. Wrap the `SlidingClippedNavBar` with [DefaultTextStyle](https://api.flutter.dev/flutter/widgets/DefaultTextStyle-class.html) and provide your `TextStyle` and this will be only applied to `SlidingClippedNavBar`
 ```dart 
 DefaultTextStyle(
@@ -185,6 +189,7 @@ Wrap `SlidingClippedNavBar` with `DecoratedBox` or `Container` and pass `BoxDeco
   )
   ```
 - #### How do I change the corner radius of the navigation bar?
+
 Wrap `SlidingClippedNavBar` with ClipRRect and pass `BorderRadius` to `borderRadius` property.
 ``` dart
   ClipRRect(

@@ -1,3 +1,6 @@
+## 2.0.1+7
+- Readme update
+- And removed unnecessary import
 ## 2.0.1+6
 - Added support button again 😐
 ## 2.0.1+5
