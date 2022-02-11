@@ -10,11 +10,6 @@
 </div>
 <hr>
 
-#### ⚠️ If you like this package please consider supporting me. This will help me to maintain free and open source flutter packages.
-
-<a href="https://www.buymeacoffee.com/watery_desert"><img src="https://raw.githubusercontent.com/watery-desert/assets/main/watery_desert/bmc-button.png" height="56"></a>
-
-
 ## How to use?
 
 Add `sliding_clipped_nav_bar:` to your `pubspec.yaml` dependencies then run `flutter pub get`
