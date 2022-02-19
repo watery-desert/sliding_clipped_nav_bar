@@ -88,7 +88,7 @@ class _NavBarButtonState extends State<NavBarButton>
         fontSize: 16,
         fontWeight: FontWeight.bold,
         color: widget.activeColor,
-      );
+      ).merge(DefaultTextStyle.of(context).style);
 
   // copied from here
   //https://stackoverflow.com/a/62536187/16122873
