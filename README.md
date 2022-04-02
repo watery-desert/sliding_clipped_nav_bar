@@ -6,12 +6,10 @@
 
 [![Instagram Badge](https://img.shields.io/badge/-Instagram-e84393?style=for-the-badge&labelColor=e84393&logo=instagram&logoColor=white)](https://instagram.com/watery_desert)
 [![Twitter Badge](https://img.shields.io/badge/-Twitter-1ca0f1?style=for-the-badge&logo=twitter&logoColor=white&link=https://twitter.com/watery_desert)](https://twitter.com/watery_desert)
+[![Discord Badge](https://img.shields.io/badge/-Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/f9CC5sEK87)
 [![pub package](https://img.shields.io/pub/v/sliding_clipped_nav_bar.svg?style=for-the-badge)](https://pub.dev/packages/sliding_clipped_nav_bar)
 </div>
 <hr>
-
-<a href="https://www.buymeacoffee.com/watery_desert"><img src="https://img.buymeacoffee.com/button-api/?text=Support me &emoji=&slug=watery_desert&button_colour=FF5F5F&font_colour=ffffff&font_family=Lato&outline_colour=000000&coffee_colour=FFDD00"></a>
-
 
 ## How to use?
 
@@ -20,13 +18,14 @@ Add `sliding_clipped_nav_bar:` to your `pubspec.yaml` dependencies then run `flu
 ```yaml
  dependencies:
   sliding_clipped_nav_bar:
+    git:
+      url: https://github.com/watery-desert/sliding_clipped_nav_bar  
 ```
 Then import the package to use
 
 ```dart 
 import 'package:sliding_clipped_nav_bar/sliding_clipped_nav_bar.dart';
 ```
-
 
 Add `SlidingClippedNavBar()` to `bottomNavigationBar` property of `Scaffold()` and add `PageView()` to `body` with `NeverScrollableScrollPhysics()` don't try to upate the seleted index from `onPageChanged` or will see some weird behaviour. You can use `Stack()` or `AnimatedSwitcher()` for custom page transition animation.
 
@@ -65,7 +64,7 @@ Add `SlidingClippedNavBar()` to `bottomNavigationBar` property of `Scaffold()` a
 </details>
 <br>
 
-## **Design Credit & screen recording**
+## Design Credit & screen recording
 
 [Toolbar icons animation by Cuberto](https://dribbble.com/shots/5605168-Toolbar-icons-animation)
 
@@ -155,12 +154,14 @@ Add `SlidingClippedNavBar()` to `bottomNavigationBar` property of `Scaffold()` a
     );
 ```
 
-### **FAQ**
+### FAQ
 
 - #### How do I change the height?
-The height must be static because the animation is in vertical direction. It was like 100 then I reduced it to 60 now. And this removed the issue with the android device, previously looked huge & ugly. Now according to me should not be an issue. But if you still think needs to be reduced then please file an issue with a screenshot. I will see if I can do something.
+
+The height must be constant because the animation is in vertical direction. According to me 60 is perfect. But if you think needs to be reduced then please create an issue with a screenshot. I will see if I can do something.
 
 - #### There is no API to change `TextStyle` of title.
+
 You don't need any API to change `TextStyle` of title. Wrap the `SlidingClippedNavBar` with [DefaultTextStyle](https://api.flutter.dev/flutter/widgets/DefaultTextStyle-class.html) and provide your `TextStyle` and this will be only applied to `SlidingClippedNavBar`
 ```dart 
 DefaultTextStyle(
@@ -185,6 +186,7 @@ Wrap `SlidingClippedNavBar` with `DecoratedBox` or `Container` and pass `BoxDeco
   )
   ```
 - #### How do I change the corner radius of the navigation bar?
+
 Wrap `SlidingClippedNavBar` with ClipRRect and pass `BorderRadius` to `borderRadius` property.
 ``` dart
   ClipRRect(

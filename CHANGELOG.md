@@ -1,3 +1,18 @@
+## 3.0.0+3
+- reformatted code
+## 3.0.0+2
+- Readme update
+## 3.0.0+1
+- Added discord link
+## 3.0.0+0
+- Default TextStyle bug fixed. Thanks to the PR https://github.com/watery-desert/sliding_clipped_nav_bar/pull/7
+## 2.0.1+8
+- Readme update
+## 2.0.1+7
+- Readme update
+- And removed unnecessary import
+## 2.0.1+6
+- Added support button again 😐
 ## 2.0.1+5
 - Removing buymeacoffee link
 ## 2.0.1+4

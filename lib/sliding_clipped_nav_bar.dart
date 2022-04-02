@@ -1,6 +1,5 @@
 library sliding_clipped_nav_bar;
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 export 'src/model/menu_item.dart';
 import 'src/model/menu_item.dart';
