@@ -1,3 +1,5 @@
+## 3.0.0+4
+- temporarily fixed fonts issue.
 ## 3.0.0+3
 - reformatted code
 ## 3.0.0+2

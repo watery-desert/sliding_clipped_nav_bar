@@ -1,7 +1,7 @@
 name: sliding_clipped_nav_bar
 description: Bottom Navigation Bar with sliding menu icon and text with clipping effect, it also has ripple effect when tapped.
 
-version: 3.0.0+3
+version: 3.0.0+4
 repository: https://github.com/watery-desert/sliding_clipped_nav_bar
 
 environment:

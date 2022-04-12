@@ -7,6 +7,8 @@
 [![Instagram Badge](https://img.shields.io/badge/-Instagram-e84393?style=for-the-badge&labelColor=e84393&logo=instagram&logoColor=white)](https://instagram.com/watery_desert)
 [![Twitter Badge](https://img.shields.io/badge/-Twitter-1ca0f1?style=for-the-badge&logo=twitter&logoColor=white&link=https://twitter.com/watery_desert)](https://twitter.com/watery_desert)
 [![Discord Badge](https://img.shields.io/badge/-Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/f9CC5sEK87)
+[![Patreon Badge](https://img.shields.io/badge/-Patreon-FF424D?style=for-the-badge&labelColor=FF424D&logo=patreon&logoColor=white)](https://www.patreon.com/watery_desert)
+[![BMC Badge](https://img.shields.io/badge/-Buy_Me_a_Coffee-FFDD00?style=for-the-badge&labelColor=FFDD00&logo=buymeacoffee&logoColor=black)](https://www.buymeacoffee.com/watery_desert)
 [![pub package](https://img.shields.io/pub/v/sliding_clipped_nav_bar.svg?style=for-the-badge)](https://pub.dev/packages/sliding_clipped_nav_bar)
 </div>
 <hr>
