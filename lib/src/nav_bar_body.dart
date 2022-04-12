@@ -13,6 +13,9 @@ class NavBarBody extends StatelessWidget {
   final Color? inactiveColor;
   final OnButtonPressCallback onButtonPress;
   final Color backgroundColor;
+  final FontWeight? fontWeight;
+  final double? fontSize;
+  final FontStyle? fontStyle;
 
   const NavBarBody({
     Key? key,
@@ -23,6 +26,9 @@ class NavBarBody extends StatelessWidget {
     required this.inactiveColor,
     required this.onButtonPress,
     required this.backgroundColor,
+    required this.fontWeight,
+    required this.fontSize,
+    required this.fontStyle,
   }) : super(key: key);
 
   @override
@@ -51,6 +57,9 @@ class NavBarBody extends StatelessWidget {
               onTap: onButtonPress,
               slidingCardColor: backgroundColor,
               itemCount: buttons.length,
+              fontSize: fontSize,
+              fontWeight: fontWeight,
+              fontStyle: fontStyle,
             );
           },
         ).toList(),

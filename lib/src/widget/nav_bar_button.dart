@@ -13,7 +13,9 @@ class NavBarButton extends StatefulWidget {
   final Color slidingCardColor;
   final Color inactiveColor;
   final int itemCount;
-
+  final FontWeight? fontWeight;
+  final double? fontSize;
+  final FontStyle? fontStyle;
   final OnButtonPressCallback onTap;
   const NavBarButton({
     Key? key,
@@ -27,6 +29,9 @@ class NavBarButton extends StatefulWidget {
     required this.slidingCardColor,
     required this.inactiveColor,
     required this.itemCount,
+    required this.fontWeight,
+    required this.fontSize,
+    required this.fontStyle,
   }) : super(key: key);
 
   @override
@@ -85,8 +90,9 @@ class _NavBarButtonState extends State<NavBarButton>
   }
 
   TextStyle getTextStyle() => TextStyle(
-        fontSize: 16,
-        fontWeight: FontWeight.bold,
+        fontSize: widget.fontSize ?? 16,
+        fontWeight: widget.fontWeight ?? FontWeight.bold,
+        fontStyle: widget.fontStyle,
         color: widget.activeColor,
       );
 
@@ -196,8 +202,7 @@ class _NavBarButtonState extends State<NavBarButton>
                   title,
                   overflow: TextOverflow.clip,
                   maxLines: 1,
-                  style:
-                      getTextStyle(),
+                  style: getTextStyle(),
                 ),
               ),
             ),

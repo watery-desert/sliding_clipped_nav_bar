@@ -15,6 +15,15 @@ class SlidingClippedNavBar extends StatelessWidget {
   /// Size of all icons (inactive items), don't make it too big or will be clipped.
   final double iconSize;
 
+  /// FontWeight of the text.
+  final FontWeight? fontWeight;
+
+  /// FontSize of the text.
+  final double? fontSize;
+
+  /// FontStyle of the text.
+  final FontStyle? fontStyle;
+
   /// Color of the selected item which indicate selected.
   final Color? _activeColor;
 
@@ -35,6 +44,9 @@ class SlidingClippedNavBar extends StatelessWidget {
     required this.onButtonPressed,
     required Color activeColor,
     Color? inactiveColor,
+    this.fontSize,
+    this.fontWeight,
+    this.fontStyle,
     this.iconSize = 30,
     this.backgroundColor = Colors.white,
   })  : assert(
@@ -54,6 +66,9 @@ class SlidingClippedNavBar extends StatelessWidget {
     required this.barItems,
     required this.selectedIndex,
     required this.onButtonPressed,
+    this.fontSize,
+    this.fontWeight,
+    this.fontStyle,
     this.iconSize = 30,
     this.backgroundColor = Colors.white,
   })  : assert(
@@ -76,6 +91,9 @@ class SlidingClippedNavBar extends StatelessWidget {
       backgroundColor: backgroundColor,
       onButtonPress: onButtonPressed,
       selectedIndex: selectedIndex,
+      fontSize: fontSize,
+      fontWeight: fontWeight,
+      fontStyle: fontStyle,
     );
   }
 }
