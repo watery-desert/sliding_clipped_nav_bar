@@ -15,11 +15,11 @@ class SlidingClippedNavBar extends StatelessWidget {
   /// Size of all icons (inactive items), don't make it too big or will be clipped.
   final double iconSize;
 
-  /// FontWeight of the text.
-  final FontWeight? fontWeight;
-
   /// FontSize of the text.
   final double? fontSize;
+
+  /// FontWeight of the text.
+  final FontWeight? fontWeight;
 
   /// FontStyle of the text.
   final FontStyle? fontStyle;

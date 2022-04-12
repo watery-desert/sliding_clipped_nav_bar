@@ -31,7 +31,7 @@ Add from pub [Stable]
 
 ```yaml
  dependencies:
-  water_drop_nav_bar:
+  sliding_clipped_nav_bar:
 ```
 
 Then import the package to use
@@ -57,6 +57,18 @@ Add `SlidingClippedNavBar()` to `bottomNavigationBar` property of `Scaffold()` a
   iconSize → `double`
   - Size of all icons (inactive items), don't make it too big or will be clipped.\
   *optional [30]*
+
+  fontSize → `double`
+  - FontSize of the text.\
+  *optional [16]*
+
+   fontWeight → `FontWeight`
+  - FontWeight of the text.\
+  *optional [FontWeight.bold]*
+
+   fontStyle → `FontStyle`
+  - FontStyle of the text.\
+  *optional [null]*
 
   activeColor → `Color`
   - Color of the selected item which indicate selected.\
