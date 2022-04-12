@@ -1,3 +1,6 @@
+## 3.1.0
+- Added 3 new API for TextStyle
+  - fontSize, fontWeight, fontStyle
 ## 3.0.0+4
 - temporarily fixed fonts issue.
 ## 3.0.0+3
