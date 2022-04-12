@@ -4,6 +4,7 @@
 
 <div align="center">
 
+[![YouTube Badge](https://img.shields.io/badge/-YouTube-EA3223?style=for-the-badge&labelColor=EA3223&logo=youtube&logoColor=white)](https://www.youtube.com/channel/UCMr8V70B4402CNOJEYQ30Qg)
 [![Instagram Badge](https://img.shields.io/badge/-Instagram-e84393?style=for-the-badge&labelColor=e84393&logo=instagram&logoColor=white)](https://instagram.com/watery_desert)
 [![Twitter Badge](https://img.shields.io/badge/-Twitter-1ca0f1?style=for-the-badge&logo=twitter&logoColor=white&link=https://twitter.com/watery_desert)](https://twitter.com/watery_desert)
 [![Discord Badge](https://img.shields.io/badge/-Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/f9CC5sEK87)
@@ -17,12 +18,22 @@
 
 Add `sliding_clipped_nav_bar:` to your `pubspec.yaml` dependencies then run `flutter pub get`
 
+Add from git [Latest and experimental version]
+
 ```yaml
  dependencies:
   sliding_clipped_nav_bar:
     git:
       url: https://github.com/watery-desert/sliding_clipped_nav_bar  
 ```
+
+Add from pub [Stable]
+
+```yaml
+ dependencies:
+  water_drop_nav_bar:
+```
+
 Then import the package to use
 
 ```dart 
@@ -161,16 +172,6 @@ Add `SlidingClippedNavBar()` to `bottomNavigationBar` property of `Scaffold()` a
 - #### How do I change the height?
 
 The height must be constant because the animation is in vertical direction. According to me 60 is perfect. But if you think needs to be reduced then please create an issue with a screenshot. I will see if I can do something.
-
-- #### There is no API to change `TextStyle` of title.
-
-You don't need any API to change `TextStyle` of title. Wrap the `SlidingClippedNavBar` with [DefaultTextStyle](https://api.flutter.dev/flutter/widgets/DefaultTextStyle-class.html) and provide your `TextStyle` and this will be only applied to `SlidingClippedNavBar`
-```dart 
-DefaultTextStyle(
-    style: TextStyle(),
-    child: SlidingClippedNavBar(),
-)
-```
 - #### How do I add drop shadow?
 
 Wrap `SlidingClippedNavBar` with `DecoratedBox` or `Container` and pass `BoxDecoration` to `decoration` property. `BoxDecoration` takes list of `boxShadow` there you can pass your drop shadow.
