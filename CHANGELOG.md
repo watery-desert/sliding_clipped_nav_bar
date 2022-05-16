@@ -1,4 +1,5 @@
-
+## 3.1.0+1
+- fixed pubignore
 ## 3.1.0
 - Added 3 new API for TextStyle
   - fontSize, fontWeight, fontStyle
