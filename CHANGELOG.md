@@ -1,3 +1,5 @@
+## 3.1.0+2
+- Readme update
 ## 3.1.0+1
 - fixed pubignore
 ## 3.1.0
