@@ -16,6 +16,7 @@ class NavBarBody extends StatelessWidget {
   final FontWeight? fontWeight;
   final double? fontSize;
   final FontStyle? fontStyle;
+  final double? availableWidth;
 
   const NavBarBody({
     Key? key,
@@ -29,6 +30,7 @@ class NavBarBody extends StatelessWidget {
     required this.fontWeight,
     required this.fontSize,
     required this.fontStyle,
+    required this.availableWidth,
   }) : super(key: key);
 
   @override
@@ -37,6 +39,7 @@ class NavBarBody extends StatelessWidget {
     return Container(
       clipBehavior: Clip.hardEdge,
       height: 60 + bottomPading,
+      width: availableWidth,
       decoration: BoxDecoration(
         color: backgroundColor,
       ),
@@ -60,6 +63,7 @@ class NavBarBody extends StatelessWidget {
               fontSize: fontSize,
               fontWeight: fontWeight,
               fontStyle: fontStyle,
+              availableWidth: availableWidth,
             );
           },
         ).toList(),
