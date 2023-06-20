@@ -1,3 +1,5 @@
+## 3.1.0+5
+- Add user-defined width
 ## 3.1.0+4
 - Readme update
 ## 3.1.0+3

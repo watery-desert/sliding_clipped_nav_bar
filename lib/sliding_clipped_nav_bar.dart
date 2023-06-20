@@ -36,6 +36,9 @@ class SlidingClippedNavBar extends StatelessWidget {
   /// background color of the bar.
   final Color backgroundColor;
 
+  /// Width of the bar, default is 100% of the screen.
+  final double? width;
+
   /// User when you want to set global active and inactive color.
   SlidingClippedNavBar({
     Key? key,
@@ -49,6 +52,7 @@ class SlidingClippedNavBar extends StatelessWidget {
     this.fontStyle,
     this.iconSize = 30,
     this.backgroundColor = Colors.white,
+    this.width,
   })  : assert(
             !barItems.any((BarItem element) =>
                 (element.activeColor != null || element.inactiveColor != null)),
@@ -71,6 +75,7 @@ class SlidingClippedNavBar extends StatelessWidget {
     this.fontStyle,
     this.iconSize = 30,
     this.backgroundColor = Colors.white,
+    this.width,
   })  : assert(
             !barItems.any((BarItem element) =>
                 (element.activeColor == null || element.inactiveColor == null)),
@@ -94,6 +99,7 @@ class SlidingClippedNavBar extends StatelessWidget {
       fontSize: fontSize,
       fontWeight: fontWeight,
       fontStyle: fontStyle,
+      availableWidth: width,
     );
   }
 }

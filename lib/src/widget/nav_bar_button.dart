@@ -17,6 +17,7 @@ class NavBarButton extends StatefulWidget {
   final double? fontSize;
   final FontStyle? fontStyle;
   final OnButtonPressCallback onTap;
+  final double? availableWidth;
   const NavBarButton({
     Key? key,
     required this.icon,
@@ -32,6 +33,7 @@ class NavBarButton extends StatefulWidget {
     required this.fontWeight,
     required this.fontSize,
     required this.fontStyle,
+    this.availableWidth,
   }) : super(key: key);
 
   @override
@@ -56,11 +58,12 @@ class _NavBarButtonState extends State<NavBarButton>
   }
 
   Widget _buildCard(double height, [Color? color]) {
-    final double deviceWidth = MediaQuery.of(context).size.width;
+    final double navbarWidth = widget.availableWidth == null
+        ? MediaQuery.of(context).size.width
+        : widget.availableWidth!;
 
     return SizedBox(
-      // width: 70,
-      width: deviceWidth / widget.itemCount,
+      width: navbarWidth / widget.itemCount,
       height: height,
       child: SlicedCard.draw(
           cardColor: color ?? widget.slidingCardColor,
@@ -109,7 +112,9 @@ class _NavBarButtonState extends State<NavBarButton>
 
   @override
   Widget build(BuildContext context) {
-    final double deviceWidth = MediaQuery.of(context).size.width;
+    final double navbarWidth = widget.availableWidth == null
+        ? MediaQuery.of(context).size.width
+        : widget.availableWidth!;
     final Color activeColor = widget.activeColor;
     final double size = widget.size;
     final int index = widget.index;
@@ -117,7 +122,7 @@ class _NavBarButtonState extends State<NavBarButton>
     final String title = widget.title;
     final Color inactiveColor = widget.inactiveColor;
     final Color slidingCardColor = widget.slidingCardColor;
-    final double eachIconWidth = deviceWidth / widget.itemCount;
+    final double eachIconWidth = navbarWidth / widget.itemCount;
 
     return GestureDetector(
       onTap: () {
@@ -195,14 +200,16 @@ class _NavBarButtonState extends State<NavBarButton>
                 ),
               ),
               child: Container(
-                width: deviceWidth / widget.itemCount,
+                width: navbarWidth / widget.itemCount,
                 alignment: Alignment.center,
                 height: textHeight(title, getTextStyle()),
-                child: Text(
-                  title,
-                  overflow: TextOverflow.clip,
-                  maxLines: 1,
-                  style: getTextStyle(),
+                child: FittedBox(
+                  child: Text(
+                    title,
+                    overflow: TextOverflow.clip,
+                    maxLines: 1,
+                    style: getTextStyle(),
+                  ),
                 ),
               ),
             ),
