@@ -1,9 +1,5 @@
-## 3.1.0+4
-- Readme update
-## 3.1.0+3
-- Readme update
-## 3.1.0+2
-- Readme update
+## 3.1.1
+- dart sdk constraint update
 ## 3.1.0+1
 - fixed pubignore
 ## 3.1.0
